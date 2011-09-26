@@ -1,0 +1,10 @@
+This is a demo Java app running on Heroku using the Play! framework. It uses the Force.com Web Service Connector (WSC) and the Partner jar to connect to a DE salesforce.com org. 
+
+For more details, see this blog post: http://blog.jeffdouglas.com/2011/09/26/telesales-play
+
+Jeff Douglas
+
+http://blog.jeffdouglas.com
+http://www.appirio.com
+http://www.cloudspokes.com
+@jeffdonthemic
