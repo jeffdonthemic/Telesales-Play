@@ -26,29 +26,21 @@ public class ConnectionManager {
 		return ref;
 	}
 	
+	// TODO - CACHE CONNECTION
 	public PartnerConnection getConnection() {
-		
-		/**
-		String customer = "my stuff";
-		MyCache.getInstance().set("AllProducts", 3600, customer);	  
-		String customer2 = (String)MyCache.getInstance().get("AllProducts");
-		System.out.println("customer2: "+customer2);
-		**/
-	
+			
 		try { 
 			
 			config = new ConnectorConfig();
 			config.setUsername(username);
 			config.setPassword(password);
 			connection = Connector.newConnection(config);
-		
-			
-			
+
 		} catch ( ConnectionException ce) {
 			System.out.println("ConnectionException " +ce.getMessage());
 		}        	
 
-        System.out.println("===========> SessionId...."+config.getSessionId());
+        //System.out.println("===========> SessionId...."+config.getSessionId());
         
 		return connection;
 	}
