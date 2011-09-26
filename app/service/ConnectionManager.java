@@ -13,8 +13,8 @@ public class ConnectionManager {
 	private static ConnectionManager ref;
 	private static PartnerConnection connection;
 	private static ConnectorConfig config;
-	private static final String username = "jeff@jeffdouglas.com";
-	private static final String password = "rTeU886@!FNHX1jAwrxfAd1CYHlFzV1sOh";
+	private static final String username = "YOUR-USERNAME";
+	private static final String password = "YOUR-PASSWORD-AND-TOKEN";
 	private static final String SESSION_KEY = "sessionKey";
 	private static final String SESSION_VALUE = "sessionValue";
 	
