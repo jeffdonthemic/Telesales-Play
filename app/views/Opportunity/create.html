@@ -1,0 +1,55 @@
+#{extends 'main.html' /}
+#{set title:'Create Opportunity' /}
+
+<span class="nav"><a href="/account/${ params.get("id") }">Back</a></span><p/>
+<span class="title">Create a New Opportunity</span>
+<p/>
+
+<form method="post" action="/opportunity/create/${ params.get("id") }">
+<table id="fancytable">
+	<tr>
+		<td class="label">Account</td>
+		<td>${ account.getField("Name") }</td>
+	</tr>
+	<tr>
+		<td class="label">Name</td>
+		<td><input typ="text" name="name"></td>
+	</tr>
+	<tr>
+		<td class="label">Amount</td>
+		<td><input typ="text" name="amount"></td>
+	</tr>
+	<tr>
+		<td class="label">Stage</td>
+		<td>
+		<select name="stageName">
+			<option>Prospecting</option>
+			<option>Qualifications</option>
+			<option>Value Proposition</option>
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="label">Probability</td>
+		<td>
+		<select name="probability">
+			<option value="10">10%</option>
+			<option value="25">25%</option>
+			<option value="50">50%</option>
+			<option value="75">75%</option>
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="label">Close Date</td>
+		<td><input typ="text" name="closeDate" value="2014-1-1"></td>
+	</tr>	
+	<tr>
+		<td class="label">Order</td>
+		<td><input typ="text" name="orderNumber"></td>
+	</tr>	
+	<tr>
+		<td colspan="2" align="center"><input type="submit" value="Submit"></td>
+	</tr>
+</table>
+</form>

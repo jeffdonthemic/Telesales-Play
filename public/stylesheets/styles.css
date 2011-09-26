@@ -1,0 +1,64 @@
+body {
+	font-family: Arial;
+	font-size: 12px;
+	background-color: #ffffff;
+	padding: 15px;
+}
+
+.title {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.heading {
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.bodyText {
+	font-size: 12px;
+}
+
+.fixedWidth {
+	font-family: Courier;
+}
+
+ul {
+	font-size: 12px;
+}
+
+td {
+	font-size: 12px;
+}
+
+.nav {
+	font-family: Arial;
+	font-size: 10px;
+	padding-bottom: 15px;
+}
+
+.label {
+	color: #ffffff; 
+	font-weight: bold;
+}
+
+.error {
+	color: red;
+}
+
+#fancytable {
+	background-color: #CCCCCC;
+	border-spacing: 1px;
+}
+
+#fancytable tr, #fancytable td {
+	background-color:#ffffff;
+	padding: 5px;	
+}
+
+#fancytable td.label {
+	background-color: #407BA8;
+	color: #ffffff;
+	font-weight: bold;
+}
+

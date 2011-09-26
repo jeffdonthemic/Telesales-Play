@@ -1,0 +1,34 @@
+#{extends 'main.html' /}
+#{set title:'Account Details' /}
+
+<span class="nav"><a href="/accounts/${ account.getField("Id") }">Back</a></span><p/>
+<span class="title">Edit Account</span>
+<p/>
+
+<form method="post" action="/account/${ account.getField("Id") }/edit"> 
+<table id="fancytable">
+	<tr>
+		<td class="label">Name</td>
+		<td>${ account.getField("Name") }</td>
+	</tr>
+	<tr>
+		<td class="label">City</td>
+		<td><input type="input" name="BillingCity" value="${ account.getField("BillingCity") }" style="width:150px"></td>
+	</tr>
+	<tr>
+		<td class="label">State</td>
+		<td>${ account.getField("BillingState") }</td>
+	</tr>
+	<tr>
+		<td class="label">Phone</td>
+		<td>${ account.getField("Phone") }</td>
+	</tr>
+	<tr>
+		<td class="label">Website</td>
+		<td>${ account.getField("Website") }</td>
+	</tr>	
+	<tr>
+		<td colspan="2" align="center"><input type="submit" value="Submit"></td>
+	</tr>	
+</table>
+</form>

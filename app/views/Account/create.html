@@ -1,0 +1,34 @@
+#{extends 'main.html' /}
+#{set title:'Create new account' /}
+
+<span class="nav"><a href="/opportunity">Back</a></span><p/>
+<span class="title">Create a New Account</span>
+<p/>
+
+<form method="post" action="/account/new">
+<table id="fancytable">
+	<tr>
+		<td class="label">Name</td>
+		<td><input typ="text" name="name"></td>
+	</tr>
+	<tr>
+		<td class="label">City</td>
+		<td><input typ="text" name="city"></td>
+	</tr>
+	<tr>
+		<td class="label">State</td>
+		<td><input typ="text" name="state"></td>
+	</tr>
+	<tr>
+		<td class="label">Phone</td>
+		<td><input typ="text" name="phone"></td>
+	</tr>
+	<tr>
+		<td class="label">Website</td>
+		<td><input typ="text" name="website"></td>
+	</tr>	
+	<tr>
+		<td colspan="2" align="center"><input type="submit" value="Submit"></td>
+	</tr>
+</table>
+</form>

@@ -1,0 +1,60 @@
+#{extends 'main.html' /}
+#{set title:'Account Details' /}
+
+<span class="nav"><a href="/opportunity">Search</a></span><p/>
+<span class="title">Account Display</span>
+<p/>
+
+<table id="fancytable">
+	<tr>
+		<td class="label">Name</td>
+		<td>${ account.getField("Name") }</td>
+	</tr>
+	<tr>
+		<td class="label">City</td>
+		<td>${ account.getField("BillingCity") }</td>
+	</tr>
+	<tr>
+		<td class="label">State</td>
+		<td>${ account.getField("BillingState") }</td>
+	</tr>
+	<tr>
+		<td class="label">Phone</td>
+		<td>${ account.getField("Phone") }</td>
+	</tr>
+	<tr>
+		<td class="label">Website</td>
+		<td>${ account.getField("Website") }</td>
+	</tr>	
+</table>
+            
+<br><a href="/opportunity/create/${ account.getField("Id") }">Create a new Opportunity</a> or <a href="/account/${ account.getField("Id") }/edit">edit this Account</a><p/>	
+
+%{ if (opportunities.length > 0) { }%
+
+	<p/><span class="heading">Opportunities for ${ account.getField("Name") }</span><br><p/>
+	
+	<table id="fancytable">
+	<tr>
+		<td class="label">Name</td>
+		<td class="label">Amount</td>
+		<td class="label">Stage</td>
+		<td class="label">Probability</td>
+		<td class="label">Close Date</td>
+		<td class="label">Order</td>
+	</tr>
+	#{list items:opportunities, as:'o' }
+		<tr style="background:#ffffff" onMouseOver="this.style.background='#eeeeee';" onMouseOut="this.style.background='#ffffff';">
+			<td nowrap>${ o.getField("Name") }</td>
+			<td>$${ o.getField("Amount") }</td>
+			<td>${ o.getField("StageName") }</td>
+			<td>${ o.getField("Probability") }</td>
+			<td>${ o.getField("CloseDate") }</td>
+			<td>${ o.getField("OrderNumber__c") }</td>
+		</tr>
+	#{/list}
+	</table>
+
+%{ } else { }%
+	<p/><span class="heading">No Opportunities found for ${ account.getField("Name") }</span>
+%{ } }%

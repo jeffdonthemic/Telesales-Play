@@ -1,0 +1,45 @@
+#{extends 'main.html' /}
+#{set title:'Opportunity - Account Search' /}
+
+<p/>
+<p>Before creating a new Opportunity, ensure that the Account does not already exist. You can also <a href="/account/new"/>create a new account</a>.</p>
+<p/>
+<form method="post" action="/opportunity">
+	<span class="heading">Search by Account Name:</span>
+	<p/>
+	<input type="text" name="name" value="ACME" style="width: 300px"/>
+	&nbsp
+	<input type="submit" value="Search"/>
+	&nbsp 
+</form>
+<p/>
+
+%{ if (accounts != null) { }%
+
+	%{ if (accounts.length > 0) { }%
+		<span class="heading">${accounts.length} accounts matching your search criteria:</span>
+		
+		<p/>
+		<table id="fancytable" width="50%">
+		<tr>
+			<td class="label">Name</td>
+			<td class="label">City</td>
+			<td class="label">State</td>
+			<td class="label">Phone</td>
+		</tr>
+		#{list items:accounts, as:'account' }
+			<tr>
+				<td><a href="/account/${ (String)account.getField("Id") }">${ account.getField("Name") }</a></td>
+				<td>${ account.getField("BillingCity") }</td>
+				<td>${ account.getField("BillingState") }</td>
+				<td>${ account.getField("Phone") }</td>
+			</tr>
+		#{/list}
+		</table>
+
+	%{ } else { }%
+		<span class="heading">No matching accounts found.</span>
+	%{ } }%
+
+
+%{ } }%
